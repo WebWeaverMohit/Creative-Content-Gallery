@@ -1,12 +1,52 @@
 <% include ./partials/header.ejs %>
-<div class="w-full text-white min-h-screen bg-zinc-600 px-10 py-5">
-    <h1 class="text-xl">Create New Post</h1>
-    <hr class="opacity-10 mt-2 mb-4">
-    <form action="/createpost" method="post" enctype="multipart/form-data">
-        <input class="block w-1/3 px-3 py-2 border-2 text-black" type="file" name="post-image">
-        <input class="block w-1/3 px-3 py-2 text-black border-2 mt-2 rounded-md" type="text" placeholder="Title" name="title">
-        <textarea class="block w-1/3 h-60 px-3 py-2 text-black border-2 mt-2 rounded-md" type="text" placeholder="Description" name="description"></textarea>
-        <input class="block w-1/3 px-3 py-2 mt-2 bg-red-700 rounded-md" type="submit" value="Create Post">
-    </form>
+<div class="w-full min-h-screen bg-cream text-primary px-6 sm:px-10 py-8">
+  <h1 class="text-2xl font-semibold">Create New Post</h1>
+  <hr class="opacity-20 my-3 border-t border-primary" />
+
+  <form
+    action="/createpost"
+    method="post"
+    enctype="multipart/form-data"
+    class="space-y-5 max-w-xl"
+  >
+    <div>
+      <label class="block text-sm font-medium mb-1">Upload Image</label>
+      <input
+        class="block w-full px-4 py-2 text-sm text-primary bg-white border border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+        type="file"
+        name="post-image"
+        required
+      />
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium mb-1">Title</label>
+      <input
+        class="block w-full px-4 py-2 text-sm text-primary bg-white border border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+        type="text"
+        placeholder="Title"
+        name="title"
+        required
+      />
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium mb-1">Description</label>
+      <textarea
+        class="block w-full h-40 px-4 py-2 text-sm text-primary bg-white border border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+        placeholder="Write something about your post..."
+        name="description"
+        required
+      ></textarea>
+    </div>
+
+    <div>
+      <input
+        class="px-6 py-2 bg-secondary text-white font-semibold rounded-full cursor-pointer hover:scale-105 transition-transform"
+        type="submit"
+        value="Create Post"
+      />
+    </div>
+  </form>
 </div>
 <% include ./partials/footer.ejs %>

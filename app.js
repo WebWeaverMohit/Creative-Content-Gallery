@@ -1,3 +1,4 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -9,6 +10,11 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const { Session } = require('inspector');
 const passport = require('passport');
+
+const connectDB = require('./config/db'); 
+const MongoStore = require('connect-mongo');
+
+connectDB();
 
 var app = express();
 
